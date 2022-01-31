@@ -14,7 +14,7 @@ import {UploadService} from '../../services/upload.service';
 export class SidebarComponent implements OnInit {
     public url;
     public identity;
-    public token; // To protect the app , it is good to have tokens as a authentication code e.g OTP
+    public token; // To protect the app , it is good to have tokens as a authentication code e.g OT
     public stats;
     public status;
     public publication: Publication;
@@ -53,7 +53,7 @@ export class SidebarComponent implements OnInit {
         this._publicationService.addPublication(this.token, this.publication).subscribe(
             response => {
                 if (response.publication) {
-//                    this.publication = response.publication;
+                   this.publication = response.publication;
                     // upload image
                     if (this.filesToUpload && this.filesToUpload.length) {
                         this._uploadService
