@@ -84,8 +84,8 @@ export class TimelineComponent implements OnInit {
         this.getPublications(this.page, true);
     }
 
-    refresh(event = null) {
-        this.getPublications(1);
+     refresh(){
+        window.location.reload();
     }
 
     showThisImage(id) {

@@ -1,5 +1,6 @@
 <div class="col-lg-8">
     <h1 class="h1-strong" *ngIf="user">{{title}} {{user.name}}</h1>
+    <!--Showing that you are following each other-->
     <div class="people" *ngIf="followed">
         <div class="item-user" *ngFor="let follow of followed">
             <div class="panel panel-default">
@@ -24,7 +25,7 @@
                         <button class="btn btn-success" *ngIf="follows.indexOf(follow.user._id) < 0"
                                 (click)="followUser(follow.user._id)"
                         >
-                            <span class="glyphicon glyphicon-plus-sign"></span> Seguir
+                            <span class="glyphicon glyphicon-plus-sign"></span> Follow
                         </button>
                         <button class="btn btn-primary" *ngIf="follows.indexOf(follow.user._id) >= 0"
                                 (mouseenter)="mouseEnter(follow.user._id)"

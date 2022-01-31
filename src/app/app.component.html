@@ -2,17 +2,19 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header" *ngIf="!identity">
+                
                 <a [routerLink]="['/home']" [routerLinkActive]="['active']" class="navbar-brand">{{title}}</a>
             </div>
             <ul class="nav navbar-nav" *ngIf="identity">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
                 <li>
                     <a [routerLink]="['/home']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-home"></span> Home</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/timeline']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-th-list"></span> Timeline</a>
+                    <a [routerLink]="['/timeline']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-th-large "></span> Feed</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/gente']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Find Friends</a>
+                    <a [routerLink]="['/gente']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Connect with devs</a>
                 </li>
                 <li>
                     <a [routerLink]="['/mensajes']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-envelope"></span> Messages</a>

@@ -24,7 +24,7 @@
 }
 /*For the text inside the navigation bar*/
 .navigation .navbar * {
-    color: #84A59D!important;
+    color: #17ebb6!important;
 }
 
 /*.navigation .navbar .a {
@@ -57,6 +57,13 @@
     padding: 20px;
     border-radius: 20px;
     text-align: center;
+    color: orange;
+}
+.splash{
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #AAB8C2;
 }
 
 .btn {

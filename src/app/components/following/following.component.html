@@ -1,6 +1,7 @@
 <div class="col-lg-8">
     <h1 class="h1-strong" *ngIf="user">{{title}} {{user.name}}</h1>
-    <div class="people" *ngIf="following">
+   <!--Showing that you are following each other-->
+    <div class="people" *ngIf="following"> 
         <div class="item-user" *ngFor="let follow of following">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -12,7 +13,8 @@
                     </div>
                     <div class="username pull-left">
                         <p class="name-surname">
-                            <a [routerLink]="['/perfil', follow.followed._id]">
+                            <!--to navigate to the user (perfil- the internal page to get the user's profile feed)-->
+                            <a [routerLink]="['/perfil', follow.followed._id]"> 
                                 {{follow.followed.name + ' ' + follow.followed.surname}}
                             </a>
                         </p>
@@ -24,7 +26,8 @@
                         <button class="btn btn-success" *ngIf="follows.indexOf(follow.followed._id) < 0"
                                 (click)="followUser(follow.followed._id)"
                         >
-                            <span class="glyphicon glyphicon-plus-sign"></span> Seguir
+                        <!--glyphicon-basically icons-->
+                            <span class="glyphicon glyphicon-plus-sign"></span> Follow
                         </button>
                         <button class="btn btn-primary" *ngIf="follows.indexOf(follow.followed._id) >= 0"
                                 (mouseenter)="mouseEnter(follow.followed._id)"
@@ -33,16 +36,17 @@
                                 [class.btn-danger]="follow.followed._id == followUserOver"
                         >
                             <span *ngIf="follow.followed._id == followUserOver; else following">
-                                <span class="glyphicon glyphicon-minus-sign"></span> Dejar de seguir
+                                <span class="glyphicon glyphicon-minus-sign"></span> Unfollow
                             </span>
                             <ng-template #following>
-                                <span class="glyphicon glyphicon-ok-sign"></span> Siguiendo
+                                <span class="glyphicon glyphicon-ok-sign"></span> Following
                             </ng-template>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+        <!--To move from one page to the other-->
         <ul class="pagination pull-right">
             <li *ngIf="page > 1"><a [routerLink]="['/siguiendo', userPageId, prev_page]">Prev</a></li>
             <li *ngIf="pages != page"><a [routerLink]="['/siguiendo', userPageId, next_page]">Next</a></li>
